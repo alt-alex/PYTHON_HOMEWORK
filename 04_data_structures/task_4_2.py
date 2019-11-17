@@ -9,3 +9,6 @@
 '''
 
 mac = 'AAAA:BBBB:CCCC'
+
+answer is:
+    mac.replace(':', '.')
