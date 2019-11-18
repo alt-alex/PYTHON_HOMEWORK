@@ -19,3 +19,18 @@
 '''
 
 ip = '192.168.3.1'
+
+
+ANSWER IS:
+
+
+a,b,c,d = [int(ip.split('.')[0]), int(ip.split('.')[1]), int(ip.split('.')[2]), int(ip.split('.')[3])]
+
+
+output_ip = '''
+    ...: ip address:
+    ...: {0:<10}{1:<10}{2:<10}{3:<10}
+    ...: {0:08b}  {1:08b}  {2:08b}  {3:08b}
+    ...: '''
+
+print(output_ip.format(a,b,c,d))

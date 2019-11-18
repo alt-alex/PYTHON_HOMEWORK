@@ -10,3 +10,9 @@
 '''
 
 mac = 'AAAA:BBBB:CCCC'
+
+
+ANSWER IS:
+
+
+	bin(int(mac.replace(':',''), 16))[2:]
