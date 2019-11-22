@@ -1,8 +1,14 @@
 #!/usr/bin/env python
 
-ip = input('Ввидите IP-сети в формате: 0.0.0.0/0: ')
+from sys import argv
 
-i,m = ip.split('/')
+i = argv[1]
+
+m = argv[2]
+
+#ip = input('Ввидите IP-сети в формате: 0.0.0.0/0: ')
+
+#i,m = ip.split('/')
 
 a, b, c, d = [int(i.split('.')[0]), int(i.split('.')[1]), int(i.split('.')[2]), int(i.split('.')[3])]
 
