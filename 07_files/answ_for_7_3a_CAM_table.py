@@ -1,12 +1,15 @@
 #!/usr/bin/env python
 
-with open('CAM_table.txt') as var_table:
-    VT = var_table.readlines()[6:]
-    result = {}
-    for eachline in VT:
-        vlan, mac, *other, intf = eachline.split()
-        out_prm = vlan + '\t' + mac + '\t' + intf
-        dict = {int(vlan): out_prm}
-        result.update(dict)
-for prm in sorted (result):
-    print(result[prm])
+prerslt = []
+with open('CAM_table.txt') as cam:
+    for line in cam:
+        if ' ' in line:
+            if line[1].isdigit():
+                vlan, mac, _, intf = line.split()
+                prerslt.append([int(vlan), mac,intf])
+                rslt = sorted(prerslt)
+    for l in rslt:
+        v, m, i = (l)
+        editcam = '{}\t{}\t{}'.format(v, m, i)
+        print(editcam)
+
