@@ -14,7 +14,15 @@ access_mode_template = [
 ]
 
 
-def generate_access_config(intf_vlan_mapping, access_template):
+port_security_template = [
+    'switchport port-security maximum 2',
+    'switchport port-security violation restrict',
+    'switchport port-security'
+]
+
+
+
+def generate_access_config(intf_vlan_mapping, access_template, psecurity=None):
     '''
     intf_vlan_mapping - словарь с соответствием интерфейс-VLAN такого вида:
         {'FastEthernet0/12':10,
@@ -24,19 +32,30 @@ def generate_access_config(intf_vlan_mapping, access_template):
     Возвращает список всех портов в режиме access с конфигурацией на основе шаблона
     '''
     rslt = []
-    for line in intf_vlan_mapping:
+    for line in access_config:
         intf = line
         a_t = access_template.copy()
         a_t.insert(0, intf)
-        new_oct = a_t[2] + ' ' + str(intf_vlan_mapping[intf])
+        new_oct = a_t[2] + ' ' + str(access_config[intf])
         a_t.pop(2)
         a_t.insert(2, new_oct)
-        rslt.append((', '.join(a_t)))
+        if psecurity == True:
+            a_t.extend(port_security_template)
+            rslt.append((', '.join(a_t)))
+        else:
+            rslt.append((', '.join(a_t)))
     return rslt
 
 
 
 
 
-print(generate_access_config(access_config, access_mode_template))
 
+print(generate_access_config(access_config, access_mode_template))
+print('''
+
+
+
+
+''')
+print(generate_access_config(access_config, access_mode_template, psecurity=True))
