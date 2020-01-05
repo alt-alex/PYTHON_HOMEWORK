@@ -1,7 +1,10 @@
 #!/usr/bin/env python
 
+<<<<<<< HEAD
 import sqlite3
 import os
+=======
+>>>>>>> 259eddfaed0a0d2d23785e607ce8a653c049f8e7
 
 def create_db():
     with open('dhcp_snooping_schema.sql', 'r') as f:
@@ -67,6 +70,9 @@ def add_data():
 
 
 if __name__ == '__main__':
+    import sqlite3
+    import os
+
     db_exists = os.path.exists('dhcp_snooping.db')
     conn = sqlite3.connect('dhcp_snooping.db')
 
