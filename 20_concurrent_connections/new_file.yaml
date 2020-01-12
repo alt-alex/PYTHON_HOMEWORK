@@ -1,9 +1,0 @@
-!!python/tuple
-- 192.168.100.1
-- '*00:48:59.899 UTC Sat Jan 11 2020'
-!!python/tuple
-- 192.168.100.2
-- '*00:49:00.219 UTC Sat Jan 11 2020'
-!!python/tuple
-- 192.168.100.3
-- '*00:49:00.119 UTC Sat Jan 11 2020'
