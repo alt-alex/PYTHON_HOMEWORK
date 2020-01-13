@@ -1,16 +1,20 @@
-Create new file at 2020-01-12 22:53:23.392054
+Create new file at 2020-01-13 20:47:57.203799
 
-R3#sh ip int br
-Interface                  IP-Address      OK? Method Status                Protocol
-FastEthernet0/0            192.168.100.3   YES NVRAM  up                    up      
-FastEthernet0/1            unassigned      YES NVRAM  administratively down down    
-R1#sh ip int br
-Interface                  IP-Address      OK? Method Status                Protocol
-FastEthernet0/0            192.168.100.1   YES NVRAM  up                    up      
-FastEthernet0/1            unassigned      YES NVRAM  administratively down down    
-R2#sh arp
-Protocol  Address          Age (min)  Hardware Addr   Type   Interface
-Internet  192.168.100.1         228   ca01.061e.0008  ARPA   FastEthernet0/0
-Internet  192.168.100.2           -   ca02.062d.0008  ARPA   FastEthernet0/0
-Internet  192.168.100.3         228   ca03.063c.0008  ARPA   FastEthernet0/0
-Internet  192.168.100.100       152   2280.a491.ec39  ARPA   FastEthernet0/0
+R1#show users
+    Line       User       Host(s)              Idle       Location
+*  2 vty 0     cisco      idle                 00:00:00 192.168.100.100
+
+  Interface    User               Mode         Idle     Peer Address
+
+R3#show users
+    Line       User       Host(s)              Idle       Location
+*  2 vty 0     cisco      idle                 00:00:00 192.168.100.100
+
+  Interface    User               Mode         Idle     Peer Address
+
+R2#show users
+    Line       User       Host(s)              Idle       Location
+*  2 vty 0     cisco      idle                 00:00:00 192.168.100.100
+
+  Interface    User               Mode         Idle     Peer Address
+
