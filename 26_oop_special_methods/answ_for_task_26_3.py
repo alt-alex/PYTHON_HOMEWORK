@@ -5,7 +5,7 @@ class IPAddress(Exception):
         r = re.search(r'(\d+.\d+.\d+.\d)/(\d+)', value)
         if r:
             n = r.group(1).split('.')
-            if 8 <= int(r.group(2)) <= 32 and 0 <= int(n[0]) <= 32 <= 32 and 0 <= int(n[1]) <= 32 <= 32 and 0 <= int(n[2]) <= 32 <= 32 and 0 <= int(n[3]) <= 32:
+            if 0 <= int(r.group(2)) <= 32 and 0 <= int(n[0]) <= 255 and 0 <= int(n[1]) <= 255 and 0 <= int(n[2]) <= 255 and 0 <= int(n[3]) <= 255:
                 self.ip = r.group(1)
                 self.mask = r.group(2)
             else:
